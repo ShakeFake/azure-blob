@@ -72,6 +72,7 @@ func TestDeleteContainerBlob(t *testing.T) {
 	azure := GetAzure(accountName, accountKey)
 	container := azure.GetContainerURL("yunkaitest")
 	blobLists := container.ListBlob()
+	fmt.Println(blobLists)
 
 	_ = blobLists
 	//for _, blob := range blobLists {

@@ -1,4 +1,4 @@
-module github.com/azure-blob
+module github.com/ShakeFake/azure-blob
 
 go 1.18
 
