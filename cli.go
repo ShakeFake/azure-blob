@@ -1,16 +1,10 @@
-/**
-    @author: yunkaiwang
-    @mail: yunkaiwang.tvunetwork.com
-    @data: 2023/2/6
-**/
-
 package azure
 
 import (
 	"fmt"
 	"github.com/Azure/azure-pipeline-go/pipeline"
 	"github.com/Azure/azure-storage-blob-go/azblob"
-	"log"
+	"github.com/siddontang/go/log"
 	"net/url"
 )
 

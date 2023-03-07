@@ -1,9 +1,3 @@
-/**
-    @author: yunkaiwang
-    @mail: yunkaiwang.tvunetwork.com
-    @data: 2023/2/9
-**/
-
 package azure
 
 import (

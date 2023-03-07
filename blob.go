@@ -1,13 +1,6 @@
-/**
-    @author: yunkaiwang
-    @mail: yunkaiwang.tvunetwork.com
-    @data: 2023/2/9
-**/
-
 package azure
 
 import (
-	"azure/utils"
 	"bufio"
 	"bytes"
 	"context"
@@ -35,7 +28,7 @@ type BlobOperator interface {
 }
 
 func (b *Blob) UploadOneFile(filePath string) (bool, error) {
-	fileHandler, err := utils.OpenFile(filePath)
+	fileHandler, err := OpenFile(filePath)
 	if err != nil {
 		return false, err
 	}
@@ -67,7 +60,7 @@ func (b *Blob) UploadOneFile(filePath string) (bool, error) {
 }
 
 func (b *Blob) StageUpload(filePath string) (bool, error) {
-	fileH, err := utils.OpenFile(filePath)
+	fileH, err := OpenFile(filePath)
 	if err != nil {
 		return false, err
 	}
@@ -92,7 +85,7 @@ func (b *Blob) StageUpload(filePath string) (bool, error) {
 			}
 		}
 		index++
-		blockid := utils.BlockIDIntToBase64(index)
+		blockid := BlockIDIntToBase64(index)
 		blockIds = append(blockIds, blockid)
 		newBlock := make([]byte, len(blockBuffer))
 		copy(newBlock, blockBuffer)
