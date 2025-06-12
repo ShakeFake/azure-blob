@@ -27,6 +27,7 @@ type BlobOperator interface {
 	Download(blobName string, downloadPath string) bool
 }
 
+// todo: 需要改造
 func (b *Blob) UploadOneFile(filePath string) (bool, error) {
 	fileHandler, err := OpenFile(filePath)
 	if err != nil {

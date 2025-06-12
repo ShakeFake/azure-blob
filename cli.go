@@ -37,6 +37,7 @@ func Init(name string, key string) error {
 }
 
 // ShowResp 直接打印 azure 的返回信息
+// todo: 考虑一下此处怎么处理。
 func ShowResp(response pipeline.Response, err error) {
 	if err != nil {
 		if stgErr, ok := err.(azblob.StorageError); !ok {

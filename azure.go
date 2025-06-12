@@ -57,13 +57,14 @@ func (a *Azure) GetContainerURL(containerName string) *Container {
 			UploadFiles:  []UploadList{},
 			Blobs:        make(map[string]*Blob, 0),
 		}
+
+		// todo: 此处对于 container 的查询，需要放掉
 		ctx := context.Background()
 		resp, err := containerURL.GetAccessPolicy(ctx, azblob.LeaseAccessConditions{})
 		if err != nil {
 			panic(err)
 		}
 		resp.BlobPublicAccess()
-		ShowResp(resp, err)
 		a.Containers[containerName] = c
 		return c
 	}

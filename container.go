@@ -52,6 +52,7 @@ func (c *Container) ListBlob() []string {
 	var blobList []string
 	ctx := context.Background()
 	for marker := (azblob.Marker{}); marker.NotDone(); {
+		fmt.Println(c.ContainerURL)
 		listBlob, err := c.ContainerURL.ListBlobsFlatSegment(ctx, marker, azblob.ListBlobsSegmentOptions{})
 		if err != nil {
 			log.Fatal(err)
